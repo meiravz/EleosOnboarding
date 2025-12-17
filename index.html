@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Eleos Onboarding</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Font: Assistant -->
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="styles/bootstrap.rtl.min.css" rel="stylesheet" />
+    <link href="styles/reset.css" rel="stylesheet" />
+    <link href="styles/myStyle.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+
+    <!-- JS בסרגל הניווט (כפי שנדרש בשיעור) -->
+    <script src="jScripts/bootstrap.bundle.min.js"></script>
+    <script src="jScripts/SCORM_API_wrapper.js"></script>
+    <script src="jScripts/javascript.js"></script>
+</head>
+
+<body>
+
+<div id="container" class="container-fluid p-0">
+
+    <!-- ====== NAVBAR ====== -->
+    <nav class="navbar main-navbar">
+        <div class="container d-flex align-items-center justify-content-between">
+
+           
+            <div class="d-flex align-items-center gap-3">
+
+                
+                <button class="btn btn-outline-dark d-md-none" id="navToggle" aria-label="פתיחת תפריט">
+                    ☰
+                </button>
+
+                <!-- לוגו + שם האתר -->
+                <a class="navbar-brand d-flex align-items-center" href="#home">
+                    <img src="images/logo.png" alt="לוגו האתר" class="nav-logo ms-2">
+                   
+                </a>
+
+                <!-- תפריט דסקטופ -->
+                <ul class="navbar-nav d-none d-md-flex flex-row gap-4">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">בית</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#units">יחידות תוכן</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">צור קשר</a>
+                    </li>
+                </ul>
+            </div>
+
+            
+            <div class="navbar-user d-none d-md-flex align-items-center">
+                <span class="user-greeting">שלום,</span>
+                <span id="userNameDisplay" class="user-name">שם משתמש</span>
+            </div>
+
+        </div>
+    </nav>
+
+    
+    <div class="mobile-menu-overlay" id="mobileMenu" aria-hidden="true">
+        <div class="mobile-menu-panel">
+            <button class="btn-close mobile-menu-close" id="navClose" aria-label="סגירת תפריט"></button>
+
+            <ul class="mobile-menu-list">
+                <li><a href="#home">בית</a></li>
+                <li><a href="#units">יחידות תוכן</a></li>
+                <li><a href="#contact">צור קשר</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ====== תוכן הדף ====== -->
+    <main>
+
+        <!-- ====== HEADER ====== -->
+        <section id="home" class="section-home hero-section">
+            <div class="hero-image-wrapper">
+            
+                <img src="images/header-hero.JPG" alt="עובדים חדשים בארגון" class="hero-image">
+
+                <div class="hero-overlay">
+                    <div class="container hero-content">
+                        <h1 class="hero-title">
+                            קליטת עובד חדש בארגון -
+                        </h1>
+                        <p class="hero-subtitle">
+                            כל מה שצריך לדעת בשבוע הראשון
+                        </p>
+
+                        <form id="heroSearchForm" class="hero-search" action="#">
+                            <div class="hero-search-inner">
+                                <input type="search"
+                                       id="heroSearchInput"
+                                       class="hero-search-input"
+                                       placeholder="חיפוש ביחידות התוכן..."
+                                       aria-label="חיפוש ביחידות התוכן">
+                                <button type="submit" class="hero-search-btn" aria-label="בצע חיפוש">
+                                    <i class="bi bi-search"></i>
+                                </button>
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- יחידות תוכן -->
+        <section id="units" class="section-units py-5">
+            <div class="container">
+                <h2 class="section-title mb-3">יחידות תוכן</h2>
+                <p class="section-subtitle mb-4">
+                    בחרי את היחידה המתאימה לך בתהליך הקליטה:
+                </p>
+
+                <div class="row g-4">
+
+                    <!-- יחידה 1 – היכרות עם הארגון -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="unit-card">
+                            <img src="images/unit1.webp" alt="היכרות עם הארגון" class="unit-card-image">
+
+                            <div class="unit-card-body">
+                                <h3 class="unit-title">היכרות עם הארגון</h3>
+                                <p class="unit-summary">
+                                    סקירה קצרה על מטרות הארגון, ערכיו ותחומי פעילותו.
+                                </p>
+                                <button class="btn btn-primary w-100">
+                                    כניסה ליחידה
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- יחידה 2 – נהלי חברה -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="unit-card">
+                            <img src="images/unit2.webp" alt="נהלי חברה" class="unit-card-image">
+
+                            <div class="unit-card-body">
+                                <h3 class="unit-title">נהלי חברה</h3>
+                                <p class="unit-summary">
+                                    כללי עבודה יומיומיים וציפיות הארגון מהעובדים.
+                                </p>
+                                <button class="btn btn-primary w-100">
+                                    כניסה ליחידה
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- יחידה 3 – מבנה ארגוני -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="unit-card">
+                            <img src="images/unit3.webp" alt="מבנה ארגוני" class="unit-card-image">
+
+                            <div class="unit-card-body">
+                                <h3 class="unit-title">מבנה ארגוני</h3>
+                                <p class="unit-summary">
+                                    היכרות עם המחלקות, אחריותן והגורמים המרכזיים בארגון.
+                                </p>
+                                <button class="btn btn-primary w-100">
+                                    כניסה ליחידה
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- יחידה 4 – משאבי אנוש -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="unit-card">
+                            <img src="images/unit4.webp" alt="משאבי אנוש" class="unit-card-image">
+
+                            <div class="unit-card-body">
+                                <h3 class="unit-title">משאבי אנוש</h3>
+                                <p class="unit-summary">
+                                    מדיניות חופשות, זכויות, הטבות ונהלי העסקה.
+                                </p>
+                                <button class="btn btn-primary w-100">
+                                    כניסה ליחידה
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- יחידה 5 – תהליכי עבודה וכלים -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="unit-card">
+                            <img src="images/unit5.webp" alt="תהליכי עבודה וכלים" class="unit-card-image">
+
+                            <div class="unit-card-body">
+                                <h3 class="unit-title">תהליכי עבודה וכלים</h3>
+                                <p class="unit-summary">
+                                    שימוש בסיסי בכלים הדיגיטליים ומערכות העבודה.
+                                </p>
+                                <button class="btn btn-primary w-100">
+                                    כניסה ליחידה
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- יחידה 6 – הדרכות ובטיחות -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="unit-card">
+                            <img src="images/unit6.webp" alt="הדרכות ובטיחות" class="unit-card-image">
+
+                            <div class="unit-card-body">
+                                <h3 class="unit-title">הדרכות ובטיחות</h3>
+                                <p class="unit-summary">
+                                    הדרכות חובה, אבטחת מידע ועמידה בנהלי בטיחות.
+                                </p>
+                                <button class="btn btn-primary w-100">
+                                    כניסה ליחידה
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- יחידה 7 – רווחה ותמיכה -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="unit-card">
+                            <img src="images/unit7.webp" alt="רווחה ותמיכה" class="unit-card-image">
+
+                            <div class="unit-card-body">
+                                <h3 class="unit-title">רווחה ותמיכה</h3>
+                                <p class="unit-summary">
+                                    שירותי רווחה, תמיכה אישית וערוצי פנייה לעובדים.
+                                </p>
+                                <button class="btn btn-primary w-100">
+                                    כניסה ליחידה
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+
+                <!-- הודעת אין תוצאות -->
+                <p id="unitsNoResults" class="units-no-results">
+                    לא נמצאו יחידות מתאימות לחיפוש.
+                </p>
+
+            </div>
+        </section>
+
+
+
+        <!-- ===== צור קשר ===== -->
+        <section id="contact" class="section-contact py-5">
+            <div class="container">
+
+                <div class="contact-card">
+                    <h2 class="contact-title mb-4">יש לכם מחשבה, שאלה או רעיון? כתבו לנו</h2>
+
+                    <form id="contactForm" novalidate>
+                        <div class="contact-grid">
+
+                            <!-- שם מלא -->
+                            <div class="contact-field contact-name">
+                                <label class="form-label contact-label">שם מלא <span class="contact-required">*</span></label>
+                                <input id="contactName" type="text" class="form-control contact-input"
+                                       placeholder="הקלידו את שמכם" required>
+                            </div>
+
+                            <!-- טלפון -->
+                            <div class="contact-field contact-phone">
+                                <label class="form-label contact-label">טלפון <span class="contact-required">*</span></label>
+                                <input id="contactPhone" type="tel" class="form-control contact-input"
+                                        required>
+                            </div>
+
+                            <!-- נושא  -->
+                            <div class="contact-field contact-subject">
+                                <label class="form-label contact-label">בחר נושא</label>
+
+                                <div class="custom-select" id="subjectSelect" role="button" tabindex="0" aria-expanded="false">
+                                    <span class="custom-select-trigger" id="subjectTrigger">בחר נושא</span>
+
+                                    <div class="custom-options" id="subjectOptions" role="listbox">
+                                        <button type="button" class="custom-option">היכרות עם הארגון</button>
+                                        <button type="button" class="custom-option">נהלי חברה</button>
+                                        <button type="button" class="custom-option">מבנה ארגוני</button>
+                                        <button type="button" class="custom-option">משאבי אנוש</button>
+                                        <button type="button" class="custom-option">תהליכי עבודה וכלים</button>
+                                        <button type="button" class="custom-option">הדרכות ובטיחות</button>
+                                        <button type="button" class="custom-option">רווחה ותמיכה</button>
+                                        <button type="button" class="custom-option">אחר</button>
+                                    </div>
+                                </div>
+
+                                
+                                <input type="hidden" id="contactSubject" name="contactSubject" value="">
+                            </div>
+
+                            <!-- הודעה -->
+                            <div class="contact-field contact-message">
+                                <label class="form-label contact-label">טקסט חופשי</label>
+                                <textarea id="contactMessage" class="form-control contact-textarea"
+                                          rows="3" placeholder="ספרו לנו בקצרה במה נוכל לעזור לכם..."></textarea>
+                            </div>
+
+                            <!-- כפתור -->
+                            <div class="contact-actions">
+                                <button type="submit" class="btn contact-submit-btn">שליחה</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- טוסט -->
+            <div class="contact-toast" id="contactToast" aria-live="polite">
+                תודה! קיבלנו את הפנייה ונחזור אליך בהקדם 
+            </div>
+        </section>
+
+
+
+    </main>
+
+</div>
+
+</body>
+</html>
