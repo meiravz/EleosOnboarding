@@ -1,0 +1,559 @@
+﻿
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    font-family: 'Assistant', sans-serif !important;
+    direction: rtl;
+    background-color: #f5f7fb;
+    color: #222;
+    margin: 0;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.main-navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    position: sticky;   /* סרגל סטיקי */
+    top: 0;
+    z-index: 1100;
+}
+
+.main-navbar .container {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+.nav-logo {
+    height: 32px;
+    width: auto;
+}
+
+.navbar-brand span {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.navbar-nav .nav-link {
+    color: #333 !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #007bff !important;
+    text-decoration: underline;
+}
+
+
+.navbar-user {
+    gap: 0.3rem;
+}
+
+.user-greeting {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.user-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #111;
+}
+
+
+#navToggle {
+    padding: 0.3rem 0.6rem;
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   תפריט מובייל
+========================================= */
+
+.mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-out;
+    z-index: 1050;
+}
+
+.mobile-menu-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 75%;
+    max-width: 320px;
+    background-color: #ffffff;
+    padding: 1.5rem 1.5rem 1.5rem 1rem;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.15);
+    transform: translateX(100%);
+    transition: transform 0.2s ease-out;
+}
+
+.mobile-menu-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+.mobile-menu-overlay.open .mobile-menu-panel {
+    transform: translateX(0);
+}
+
+.mobile-menu-close {
+    display: block;
+    margin-inline-start: auto;
+}
+
+.mobile-menu-list {
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+    text-align: right;
+}
+
+.mobile-menu-list li {
+    margin-bottom: 1rem;
+}
+
+.mobile-menu-list a {
+    display: block;
+    text-align: right;
+    direction: rtl;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.mobile-menu-list a:hover {
+    color: #007bff;
+}
+
+
+@media (max-width: 767.98px) {
+    .navbar-nav.d-md-flex {
+        display: none !important;
+    }
+
+    .navbar-user {
+        display: flex !important;
+        margin-right: 0.5rem;
+        margin-left: 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.hero-section {
+    background-color: #ffffff;
+    margin-bottom: 0;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to left,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0)
+    );
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    text-align: right;
+    color: #ffffff;
+    max-width: 500px;
+    margin-right: 0;
+}
+
+.hero-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+/* חיפוש בהדר */
+.hero-search {
+    width: 100%;
+    max-width: 350px;
+    margin-right: 0;
+}
+
+.hero-search-inner {
+    background-color: #ffffff;
+    border-radius: 999px;
+    padding: 0.4rem 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hero-search-input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 0.95rem;
+    background: transparent;
+    text-align: right;
+}
+.hero-search-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.hero-search-btn .bi {
+    font-size: 1.2rem;
+    color: #000;
+}
+
+
+.hero-search-btn:focus,
+.hero-search-btn:active {
+    outline: none;
+    box-shadow: none;
+}
+
+
+.hero-search-btn:hover .bi {
+    opacity: 0.7;
+}
+@media (max-width: 767px) {
+    .hero-search-btn .bi {
+        font-size: 1.1rem;
+    }
+}
+
+/* =========================================
+   יחידות תוכן
+========================================= */
+
+.section-units,
+.section-contact {
+    background-color: #f5f7fb;
+}
+
+.section-home h1,
+.section-units h2,
+.section-contact h2 {
+    font-weight: 700;
+}
+
+
+.unit-card {
+    background-color: #223648 !important;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: #ffffff;
+}
+
+.unit-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.unit-card-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.unit-card-body {
+    padding: 1.2rem 1.4rem;
+    flex: 1;
+}
+
+.unit-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    color: #ffffff;
+}
+
+.unit-summary {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #e3e9f2;
+    margin-bottom: 1rem;
+}
+
+.unit-card-body .btn {
+    background-color: #ffbf36;
+    color: #000;
+    border: none;
+    border-radius: 999px;
+    font-weight: 600;
+    padding: 0.55rem 1rem;
+}
+
+.unit-card-body .btn:hover {
+    background-color: #e3a82f;
+    color: #000;
+}
+
+
+.units-no-results {
+    display: none;           
+    background: #ffe8e8;
+    color: #b00020;
+    border: 1px solid #ffb3b3;
+    border-radius: 12px;
+    padding: 0.9rem 3.2rem;
+    max-width: 500px;
+    margin: 1.5rem auto;
+    font-size: 0.95rem;
+    text-align: right;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+
+.units-no-results::before {
+    content: "⚠️";
+    position: absolute;
+    right: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   התאמה למובייל – כרטיסיות
+========================================= */
+
+@media (max-width: 767px) {
+
+    .unit-card {
+        width: 92%;        /* לא 100% רוחב */
+        max-width: 360px;
+        margin: 0 auto 1rem;
+        min-height: 260px;
+        border-radius: 20px;
+    }
+
+    .unit-card-image {
+        height: 120px;
+    }
+
+    .unit-title {
+        font-size: 1.05rem;
+    }
+
+    .unit-summary {
+        font-size: 0.9rem;
+    }
+
+    .unit-card-body .btn {
+        font-size: 0.95rem;
+    }
+}
+
+/* ===== Contact Card בסיס ===== */
+.contact-card{
+    background:#223648;
+    color:#fff;
+    padding:2.2rem 2rem;
+    border-radius:22px;
+    max-width:1100px;
+    margin:0 auto;
+}
+
+.contact-title{
+    font-size:1.6rem;
+    font-weight:700;
+    margin-bottom:1.5rem;
+    text-align:right;
+}
+
+.contact-label{ color:#fff; font-size:0.9rem; }
+.contact-required{ color:#ffbf36; font-weight:700; }
+
+.contact-input,.contact-textarea{
+    border:2px solid #ffbf36;
+    border-radius:14px;
+    background:#fff;
+    padding:0.55rem 1rem;
+    font-size:0.95rem;
+}
+
+.contact-textarea{ min-height:120px; resize:vertical; }
+
+.contact-submit-btn{
+    background:#ffbf36;
+    border:none;
+    border-radius:999px;
+    font-weight:700;
+    padding:0.7rem 2.6rem;
+    color:#000;
+}
+.contact-submit-btn:hover{ background:#e3a82f; }
+
+
+.contact-grid{
+    display:grid;
+    grid-template-columns: 1fr 320px; /* ימין רחב (שם+טלפון), שמאל נושא */
+    grid-template-areas:
+    "name subject"
+    "phone subject"
+    "message message"
+    "button button";
+    gap:1.2rem 2rem;
+    align-items:start;
+}
+
+.contact-name{ grid-area:name; }
+.contact-phone{ grid-area:phone; }
+.contact-subject{ grid-area:subject; }
+.contact-message{ grid-area:message; }
+.contact-actions{ grid-area:button; text-align:center; }
+
+
+.custom-select{
+    position:relative;
+    background:#fff;
+    color:#000;
+    border:2px solid #ffbf36;
+    border-radius:14px;
+    padding:0.55rem 1rem 0.55rem 1rem; /* מקום לחץ */
+    cursor:pointer;
+    user-select:none;
+}
+
+.custom-select-trigger{
+    display:block;
+    text-align:right;
+}
+
+
+.custom-select::after{
+    content:"▼";
+    position:absolute;
+    left:1rem;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:0.75rem;
+    color:#223648;
+    pointer-events:none;
+}
+
+.custom-options{
+    position:absolute;
+    right:0;
+    left:0;
+    top:calc(100% + 8px);
+    background:#fff;
+    border:1px solid #e7e7e7;
+    border-radius:14px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.18);
+    overflow:hidden;
+    max-height:220px;
+    overflow-y:auto;
+    display:none;
+    z-index:9999;
+}
+
+.custom-select.open .custom-options{ display:block; }
+
+.custom-option{
+    width:100%;
+    border:0;
+    background:transparent;
+    padding:0.8rem 1rem;
+    text-align:right;
+    cursor:pointer;
+    font-size:1rem;
+}
+.custom-option:hover{ background:#f2f4f7; }
+
+
+@media (max-width:767.98px){
+    .contact-card{ padding:1.6rem 1.2rem; border-radius:18px; }
+    .contact-title{ text-align:center; font-size:1.35rem; }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+        grid-template-areas:
+      "name"
+      "phone"
+      "subject"
+      "message"
+      "button";
+        gap:1rem;
+    }
+
+    
+    .custom-options{ max-height:260px; }
+    .contact-submit-btn{ width:100%; }
+}
+
+/* ===== Toast  ===== */
+.contact-toast{
+    position:fixed;
+    bottom:24px;
+    left:50%;
+    transform:translateX(-50%) translateY(20px);
+    background:#223648;
+    color:#fff;
+    padding:0.9rem 1.4rem;
+    border-radius:999px;
+    opacity:0;
+    pointer-events:none;
+    transition:0.25s ease;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+    z-index:3000;
+}
+.contact-toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+}
